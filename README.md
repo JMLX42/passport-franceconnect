@@ -32,17 +32,19 @@ corresponding secret as arguments, as well as `profile` which contains the
 authenticated user's FranceConnect profile. The `verify` callback must call `cb`
 providing a user to complete authentication.
 
-    passport.use(new FranceConnectStrategy({
-        clientID: FRANCECONNECT_CLIENT_ID,
-        clientSecret: FRANCECONNECT_CLIENT_SECRET,
-        callbackURL: "http://127.0.0.1:3000/auth/france-connect/callback"
-      },
-      function(token, tokenSecret, profile, cb) {
-        User.findOrCreate({ twitterId: profile.id }, function (err, user) {
-          return cb(err, user);
-        });
-      }
-    ));
+```javascript
+passport.use(new FranceConnectStrategy({
+    clientID: FRANCECONNECT_CLIENT_ID,
+    clientSecret: FRANCECONNECT_CLIENT_SECRET,
+    callbackURL: "http://127.0.0.1:3000/auth/france-connect/callback"
+  },
+  function(token, tokenSecret, profile, cb) {
+    User.findOrCreate({ twitterId: profile.id }, function (err, user) {
+      return cb(err, user);
+    });
+  }
+));
+```
 
 Other options include:
 
@@ -78,15 +80,17 @@ authenticate requests.
 For example, as route middleware in an [Express](http://expressjs.com/)
 application:
 
-    app.get('/auth/france-connect',
-      passport.authenticate('france-connect'));
+```javascript
+app.get('/auth/france-connect',
+  passport.authenticate('france-connect'));
 
-    app.get('/auth/france-connect/callback',
-      passport.authenticate('france-connect', { failureRedirect: '/login' }),
-      function(req, res) {
-        // Successful authentication, redirect home.
-        res.redirect('/');
-      });
+app.get('/auth/france-connect/callback',
+  passport.authenticate('france-connect', { failureRedirect: '/login' }),
+  function(req, res) {
+    // Successful authentication, redirect home.
+    res.redirect('/');
+  });
+```
 
 ## Support
 
