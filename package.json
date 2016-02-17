@@ -1,0 +1,43 @@
+{
+  "name": "passport-franceconnect",
+  "version": "1.0.0",
+  "description": "France Connect authentication strategy for Passport.",
+  "keywords": [
+    "passport",
+    "france-connect",
+    "auth",
+    "authentication",
+    "identity"
+  ],
+  "author": {
+    "name": "Jean-Marc Le Roux",
+    "email": "jeanmarc.leroux@gmail.com",
+    "url": "https://github.com/promethe42/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/promethe42/passport-franceconnect.git"
+  },
+  "bugs": {
+    "url": "http://github.com/promethe42/passport-franceconnect/issues"
+  },
+  "license": "MIT",
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://opensource.org/licenses/MIT"
+    }
+  ],
+  "main": "./lib",
+  "dependencies": {
+    "passport-oauth": "^1.0.0",
+    "passport-openidconnect": "0.0.1"
+  },
+  "devDependencies": {
+  },
+  "engines": {
+    "node": ">= 0.4.0"
+  },
+  "scripts": {
+  }
+}
