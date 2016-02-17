@@ -1,6 +1,6 @@
 {
   "name": "passport-franceconnect",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "France Connect authentication strategy for Passport.",
   "keywords": [
     "passport",
