@@ -1,6 +1,6 @@
 {
   "name": "passport-franceconnect",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "France Connect authentication strategy for Passport.",
   "keywords": [
     "passport",
@@ -33,11 +33,9 @@
     "passport-oauth": "^1.0.0",
     "passport-openidconnect": "0.0.1"
   },
-  "devDependencies": {
-  },
+  "devDependencies": {},
   "engines": {
     "node": ">= 0.4.0"
   },
-  "scripts": {
-  }
+  "scripts": {}
 }
