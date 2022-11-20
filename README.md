@@ -33,7 +33,7 @@ authenticated user's FranceConnect profile. The `verify` callback must call `cb`
 providing a user to complete authentication.
 
 ```javascript
-passport.use(new FranceConnectStrategy({
+passport.use('france-connect',new FranceConnectStrategy({
     clientID: FRANCECONNECT_CLIENT_ID,
     clientSecret: FRANCECONNECT_CLIENT_SECRET,
     callbackURL: "http://127.0.0.1:3000/auth/france-connect/callback"
@@ -45,6 +45,33 @@ passport.use(new FranceConnectStrategy({
   }
 ));
 ```
+Profile content example:
+With scope ["profile", "email", "openid", "birthdate","birthplace","birthcountry","familyname","gender"]
+
+```javascript
+profile= { 
+  id: "UNIQUE ID FROM FRANCE CONNECT",
+  displayName: "string",
+  name:{
+	  familyName: 'Doe',
+    givenName: 'John',
+    middleName: 'string' 
+	},
+  _raw: '{"sub":"UNIQUE ID FROM FRANCE CONNECT","birthdate":"1990-01-01","birthplace":"91272","birthcountry":"99100","gender":"male","given_name":"John","family_name":"Doe","email":"john.Doe@france.fr"}',
+  _json:
+	{ 
+		sub: 'UNIQUE ID FROM FRANCE CONNECT',
+		birthdate: '1990-01-01',
+		birthplace: '91272',
+		birthcountry: '99100',
+		gender: 'male',
+		given_name: 'John',
+		family_name: 'Doe',
+		email: 'john.doe@france.fr' 
+	} 
+}
+```
+If you want use the Family Name you just need call profile.name.familyName and for the gender you need call profile._json.gender
 
 Other options include:
 
